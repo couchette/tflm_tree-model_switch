@@ -25,11 +25,15 @@ include_directories(
         ../../third_party/kissfft
 )
 
-add_executable(${PROJECT_NAME} 
-    ${HW_SRC}
-)
+# add_executable(${PROJECT_NAME} 
+#     ${HW_SRC}
+# )
 
-target_link_libraries(${PROJECT_NAME}
-    tflm
-    -lpthread
-    -lm)
+# target_link_libraries(${PROJECT_NAME}
+#     tflm
+#     -lpthread
+#     -lm)
+
+add_library(${LIB_NAME} SHARED
+${HW_SRC}
+)

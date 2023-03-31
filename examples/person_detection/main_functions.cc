@@ -44,7 +44,7 @@ alignas(16) static uint8_t tensor_arena[kTensorArenaSize];
 }  // namespace
 
 // The name of this function is important for Arduino compatibility.
-void setup() {
+void PD_setup() {
   tflite::InitializeTarget();
 
   // Map the model into a usable data structure. This doesn't involve any
@@ -92,7 +92,7 @@ void setup() {
 }
 
 // The name of this function is important for Arduino compatibility.
-void loop() {
+void PD_loop() {
   // Get image from provider.
   if (kTfLiteOk !=
       GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8)) {

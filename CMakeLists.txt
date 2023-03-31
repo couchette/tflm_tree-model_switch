@@ -48,4 +48,5 @@ target_link_libraries(${LIB_NAME}
 add_subdirectory(examples/hello_world)
 add_subdirectory(examples/micro_speech)
 add_subdirectory(examples/person_detection)
+add_subdirectory(src)
   

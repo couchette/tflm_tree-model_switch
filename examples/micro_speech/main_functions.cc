@@ -15,6 +15,7 @@ limitations under the License.
 
 #include "main_functions.h"
 
+#include <cstdio>
 #include "audio_provider.h"
 #include "command_responder.h"
 #include "feature_provider.h"
@@ -117,9 +118,10 @@ void setup() {
 
   previous_time = 0;
 }
-
+uint32_t loop_count = 0;
 // The name of this function is important for Arduino compatibility.
 void loop() {
+  printf("micro_speech loop count: %d\n", loop_count++);
   // Fetch the spectrogram for the current time.
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
